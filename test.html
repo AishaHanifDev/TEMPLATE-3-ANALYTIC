@@ -4,47 +4,49 @@
     <title>ANALYTIC</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="Analytic.CSS">
+    <link rel="stylesheet" type="text/css" href="test.CSS">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
   </head>
 <body>
   <div class="wrapper">
-	 <div class="Nav">
-    <button class="head">Logo</button>
-    <button class="openbtn" onclick="openNav()"><i class="fa fa-bars"></i> Menu</button>  
+    <div class="Container">
+   <div class="top">
+    <p class="logo">Logo</p>
+     <button class="openbtn" onclick="openNav()"><i class="fa fa-bars"></i> Menu</button> 
 </div>
-   <div class="Container">
-    <div id="myLeftpanel" class="leftpanel">
-   	<div class="left-side">
-   	 <div class="left">
-   	 <div class="IMG">
-    <img src="avatar2.png" class="avatar" width="46px"/>
+       <!-- Sidebar/menu -->
+   <div class="left" id="mySidebar">
+    <div class="leftside">
+     <div class="col-1">
+     <img src="avatar2.png" class="avatar2" style="width:46px"/>
 </div>
-    <div class="col-1">
-     <p>Welcome,<strong>Mike</strong></p>
-     <a href="#" class="bars"><i class="fa fa-envelope"></i></a>
-     <a href="#" class="bars"><i class="fa fa-user"></i></a>
-     <a href="#" class="bars"><i class="fa fa-cog"></i></a>
- </div>
+  <div class="col-2">
+      <p>Welcome, <strong>Mike</strong></p>
+      <a href="#" class="bars"><i class="fa fa-envelope"></i></a>
+      <a href="#" class="bars"><i class="fa fa-user"></i></a>
+      <a href="#" class="bars"><i class="fa fa-cog"></i></a>
+    </div>
 </div>
-   <div class="TEXT">
-   <p class="dash">Dashboard</p>
+   <div class="container">
+     <h5 class="dash">Dashboard</h5>
 </div>
-   <div class="close">
-    <a href"javascript:void(0)" class="closebtn" onclick="closeNav()"><i class="fa fa-remove fa-fw"></i>Close Menu</a>
-    <a href="#" class="over"><i class="fa fa-users fa-fw"></i> Overview</a>
-    <a href="#" class="views"><i class="fa fa-eye fa-fw"></i> Views</a>
-    <a href="#" class="traffic"><i class="fa fa-users fa-fw"></i> Traffic</a>
-    <a href="#" class="geo"><i class="fa fa-bullseye fa-fw"></i> Geo</a>
-    <a href="#" class="order"><i class="fa fa-diamond fa-fw"></i> Orders</a>
-    <a href="#" class="news"><i class="fa fa-bell fa-fw"></i> News</a>
-    <a href="#" class="general"><i class="fa fa-bank fa-fw"></i> General</a>
-    <a href="#" class="history"><i class="fa fa-history fa-fw"></i> History</a>
-    <a href="#" class="setting"><i class="fa fa-cog fa-fw"></i> Setting</a>
+  <div class="card">
+    <a href="#" class="closebtn" onclick="closeNav()" title="close menu"><i class="fa fa-remove fa-fw"></i>&nbsp; Close Menu</a>
+    <a href="#" class="over"><i class="fa fa-users fa-fw"></i>&nbsp; Overview</a>
+    <a href="#" class="views"><i class="fa fa-eye fa-fw"></i>&nbsp; Views</a>
+    <a href="#" class="traffic"><i class="fa fa-users fa-fw"></i>&nbsp; Traffic</a>
+    <a href="#" class="geo"><i class="fa fa-bullseye fa-fw"></i>&nbsp; Geo</a>
+    <a href="#" class="order"><i class="fa fa-diamond fa-fw"></i>&nbsp; Orders</a>
+    <a href="#" class="news"><i class="fa fa-bell fa-fw"></i>&nbsp; News</a>
+    <a href="#" class="general"><i class="fa fa-bank fa-fw"></i>&nbsp; General</a>
+    <a href="#" class="history"><i class="fa fa-history fa-fw"></i>&nbsp; History</a>
+    <a href="#" class="setting"><i class="fa fa-cog fa-fw"></i>&nbsp; Settings</a><br><br>
   </div>
  </div>
 </div>
+   <!-- Overlay effect when opening sidebar on small screens -->
+<div class="overlay" onclick="close()" title="close side menu" id="myOverlay"></div>
   <div class="right-side">
     <div class="right">
     <h5 class="dashboard"><i class="fa fa-dashboard"></i> My Dashboard</h5>
@@ -245,23 +247,45 @@
 
 
 
-
-
-
 <script>
-    function openNav() {
-      document.getElementById("myLeftpanel").style.width = "320px" ;
-      document.getElementById("myLeftpanel").style.height = "100%" ;
-      document.getElementsByClassName("left-side").style.display="block";
+// Get the Sidebar
+var mySidebar = document.getElementById("mySidebar");
 
-    }
-    
-    function closeNav() {
-        document.getElementById("myLeftpanel").style.width = "0";
-        document.getElementsByClassName("left-side").style.display="none";
+// Get the DIV with overlay effect
+var overlayBg = document.getElementById("myOverlay");
+
+// Toggle between showing and hiding the sidebar, and add overlay effect
+function openNav() {
+  if (mySidebar.style.display === 'block') {
+    mySidebar.style.display = 'none';
+    overlayBg.style.display = "none";
+     document.getElementById("mySidebar").style.width = "50%" ;
+    document.getElementById("myLeftpanel").style.height = "100%" ;
 
 
-    }
-   </script>
-</body>
+  } else {
+    mySidebar.style.display = 'block';
+    overlayBg.style.display = "block";
+  }
+}
+
+// Close the sidebar with the close button
+function closeNav() {
+  mySidebar.style.display = "none";
+  overlayBg.style.display = "none";
+}
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+  </body>
 </html>

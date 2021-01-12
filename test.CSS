@@ -52,37 +52,38 @@ height:3rem;
 }
 .leftside{ 
  padding: 0.01em 16px;
- height:5rem;
- }
-.col-1{
- width: 33.33333%;
+ height:2rem;
  display:block;
-}
+ }
 .avatar2{
  width: 46px;
  margin-right: 16px;
  border-radius: 50%;
  border-style: none;
- padding:15px;
+ padding:16px 0px;
 }
-.col-2{
- width: 66.66666%;
- margin-top:3rem; 
+.col-1{
+ height:0rem;
+ float:left;
+}
+.COL-2{
  display:block;
+ height:2rem;
+ margin:0px 80px;
 }
 .bars{
  cursor: pointer;
- width:10%;
+ width:40%;
  height:3rem;
  color:black;
- padding:8px 16px;
+ padding:8px;
 }
 .bars:hover{
   background-color:lightgray;
 }
 .container{
   padding: 0.01em 16px;
-  margin-top:3rem;
+  margin-top:2rem;
 }
 .dash{
   font-weight: 400;
@@ -176,10 +177,10 @@ background-color: #616161;
 }
 .BOx{
   display:block;
-  margin-bottom: 16px;
-  padding:0 8px;
-  width:23.3%;
-  height:3rem;
+  margin: 0 8px;
+  padding:0 6px;
+  width:22%;
+  height:5rem;
    }
 .box-red,.box-blue,.box-green,.box-orange{
   padding-top: 16px;
@@ -405,21 +406,35 @@ table td{
        .left{
         display:block;
         width:40%;
+        position:fixed;
+        height:100%;
        }
-       .col-2{
-        width:10%;
+       .top{
+        position:fixed;
+        width:100%;
+       }
+       .COL-2{
+        width:60%;
        }
       .openbtn,.closebtn{
         display:block;
        }
-      .Container,.right-side,.cont-grey{
+      .right-side,.cont-grey{
         width:100%;
         height:100%;        
         display:block;
        }
+       .Container{
+        width:90%;
+       }
+       .last-cont{
+          width:98%;
+          height:5rem;
+       }
+
       .ROW1,.BARS,.TABLE-2,.three-imgs,.COL-1{
-        margin:auto;
-        width:96%;
+       margin:auto;
+       width:96%;
       }
       .box-red,.box-blue,.box-green,.box-orange,.feed-text,.BOx,.two-cont,.Region,.region,.feed,.table,.feed-text
       {
@@ -431,9 +446,12 @@ table td{
       .two-cont,.container-1,.container-2,.container-3{
         margin-bottom:2rem;
      }
-      .col-2,.container-1,.container-2,.container-3{
+      .container-1,.container-2,.container-3{
         width:90%;
         float:left;
+     }
+     .col-2{
+      margin-left:10px;
      }
    }
 
@@ -442,15 +460,22 @@ table td{
          ##Screen = B/w 768px to 1024px:
 */
 @media (min-width:601px) and (max-width:991px) {
-        .container,.right-side{
+        .Container,.right-side{
           width:100%;
           height:100%;
+
         }
         .left{
          display:block;
          width:40%;
-/*         height:100%;
-*/        }
+         height:100%;
+         position:fixed;
+/*         overflow-y:scroll;
+*/       }
+       .top{
+        position:fixed;
+        width:100%;
+       }
         .openbtn,.closebtn{
           display:block;
         }
@@ -468,16 +493,25 @@ table td{
          ##Device = Laptops, Desktops
          ##Screen = B/w 1025px to 1280px:
 */
-@media (min-width:992px) and (max-width:1280px){
+@media (min-width:992px) and (max-width:1285px){
          .Container,.right-side{
           width:100%;
           height:100%;
+          margin:auto;
         } 
          .left{
-            width:23%;
-            display:block;
-            position:fixed;
+           width:23%;
+           display:block;
+           position:fixed;
+           overflow-y:scroll;
         }
+        .COL-2{
+        width:60%;
+       }
+        .top{
+          position:fixed;
+          width:100%;
+       }
          .right-side{
           width:77%;
           height:100%;
